@@ -1,6 +1,8 @@
 <?php
 
-use Illuminate\Http\Request;
+use App\Http\Controllers\PostsController;
+use App\Http\Controllers\SubscriberController;
+use App\Http\Controllers\WebsitesController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -14,6 +16,6 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
-    return $request->user();
-});
+Route::post('/websites', [WebsitesController::class, 'store']);
+Route::post('/posts', [PostsController::class, 'store']);
+Route::post('/subscribers', [SubscriberController::class, 'store']);
